@@ -1,11 +1,13 @@
 #define _MAIN
 #include <stdio.h>
 #include <string.h>
-#include <meraxes.h>
 #include <sys/stat.h>
-#include <mpi.h>
-#include <mlog.h>
 #include <math.h>
+
+#include <mpi.h>
+
+#include <meraxes.h>
+#include <mlog.h>
 
 /*
  * Header info
@@ -164,7 +166,7 @@ int main(int argc, char* argv[])
         char file_name_galaxies[STRLEN];
         sprintf(file_name_galaxies, "meraxes_%03d", ii);
         if (!analysis_rank) {
-            strcpy(run_globals.params.FileNameGalaxies, file_name_galaxies);
+            strncpy(run_globals.params.FileNameGalaxies, file_name_galaxies, STRLEN);
             mlog(">>>> New FileNameGalaxies is: %s", MLOG_MESG, run_globals.params.FileNameGalaxies);
             update_params(grid_params, ii);
 
