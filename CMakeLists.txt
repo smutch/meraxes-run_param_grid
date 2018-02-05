@@ -11,6 +11,9 @@ set(SRC
 
 add_executable(run_param_grid ${SRC})
 target_link_libraries(run_param_grid meraxes_lib)
-set_property(TARGET run_param_grid PROPERTY C_STANDARD 99)
+set_target_properties(run_param_grid PROPERTIES
+    C_STANDARD 99
+    INSTALL_RPATH_USE_LINK_PATH TRUE
+    )
 
 install(TARGETS run_param_grid DESTINATION .)
