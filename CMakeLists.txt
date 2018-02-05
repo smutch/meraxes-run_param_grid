@@ -3,6 +3,9 @@ project(run_param_grid)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DDEBUG -Wall -O0")
+set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Build type.")
+
 find_package(Meraxes REQUIRED)
 
 set(SRC
